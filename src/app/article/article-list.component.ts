@@ -3,7 +3,6 @@ import {RouteParams, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 import {TranslatePipe} from 'ng2-translate/ng2-translate';
 import {TitleDirective} from '../title/title.directive';
-import b64 from '../base/base64/base64safe.service';
 
 import {ArticleApi} from './article.api';
 
@@ -27,7 +26,7 @@ export class ArticleListComponent implements OnInit {
 
       data.results.map(a => {
         let article = {
-          url: b64.encode(a.url),
+          url: a.url,
           title: a.title,
           createTime: a.create_time,
           category: a.category.url,
